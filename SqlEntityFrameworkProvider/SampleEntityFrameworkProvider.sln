@@ -1,0 +1,15 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 10
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleEntityFrameworkProvider_csproj", "SampleEntityFrameworkProvider.csproj", "{EBA0B8A0-6C00-44C2-A8F0-394069B9486B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		VSMSBuild|Any CPU = VSMSBuild|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EBA0B8A0-6C00-44C2-A8F0-394069B9486B}.VSMSBuild|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBA0B8A0-6C00-44C2-A8F0-394069B9486B}.VSMSBuild|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+	EndGlobalSection
+EndGlobal

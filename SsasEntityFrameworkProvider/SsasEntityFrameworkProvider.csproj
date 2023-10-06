@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED4A96FC-6875-4943-B031-157B646EB837}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AgileDesign.SsasEntityFrameworkProvider</RootNamespace>
+    <AssemblyName>SsasEntityFrameworkProvider</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <CodeContractsAssemblyMode>1</CodeContractsAssemblyMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>True</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <CodeAnalysisRuleSet>..\ClassLibraryExtended.ruleset</CodeAnalysisRuleSet>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE;NET40;CODE_ANALYSIS;CODE_ANALYSIS;CODE_ANALYSIS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>True</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>False</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>False</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>..\ClassLibraryExtended.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <CodeAnalysisIgnoreGeneratedCode>false</CodeAnalysisIgnoreGeneratedCode>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\bin\x86\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;NET40</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\LinqToOlap.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\ClassLibraryExtended.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>False</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>True</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>False</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>DoNotBuild</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;CODE_ANALYSIS,NET40</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\LinqToOlap.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>..\ClassLibraryExtended.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeContractsEnableRuntimeChecking>True</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeOnlyPublicSurface>True</CodeContractsRuntimeOnlyPublicSurface>
+    <CodeContractsRuntimeThrowOnFailure>True</CodeContractsRuntimeThrowOnFailure>
+    <CodeContractsRuntimeCallSiteRequires>False</CodeContractsRuntimeCallSiteRequires>
+    <CodeContractsRuntimeSkipQuantifiers>False</CodeContractsRuntimeSkipQuantifiers>
+    <CodeContractsRunCodeAnalysis>False</CodeContractsRunCodeAnalysis>
+    <CodeContractsNonNullObligations>False</CodeContractsNonNullObligations>
+    <CodeContractsBoundsObligations>False</CodeContractsBoundsObligations>
+    <CodeContractsArithmeticObligations>False</CodeContractsArithmeticObligations>
+    <CodeContractsEnumObligations>False</CodeContractsEnumObligations>
+    <CodeContractsRedundantAssumptions>False</CodeContractsRedundantAssumptions>
+    <CodeContractsRunInBackground>True</CodeContractsRunInBackground>
+    <CodeContractsShowSquigglies>False</CodeContractsShowSquigglies>
+    <CodeContractsUseBaseLine>False</CodeContractsUseBaseLine>
+    <CodeContractsEmitXMLDocs>False</CodeContractsEmitXMLDocs>
+    <CodeContractsCustomRewriterAssembly />
+    <CodeContractsCustomRewriterClass />
+    <CodeContractsLibPaths />
+    <CodeContractsExtraRewriteOptions />
+    <CodeContractsExtraAnalysisOptions />
+    <CodeContractsBaseLineFile />
+    <CodeContractsCacheAnalysisResults>False</CodeContractsCacheAnalysisResults>
+    <CodeContractsRuntimeCheckingLevel>Preconditions</CodeContractsRuntimeCheckingLevel>
+    <CodeContractsReferenceAssembly>Build</CodeContractsReferenceAssembly>
+    <CodeContractsAnalysisWarningLevel>0</CodeContractsAnalysisWarningLevel>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\Agile Design Company\Licensing\AgileDesignLlc.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.2\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LogicNP.CryptoLicensing, Version=6.0.0.0, Culture=neutral, PublicKeyToken=4a3c0a4c668b48b4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdParty\Bin\LogicNP\LogicNP.CryptoLicensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AnalysisServices.AdomdClient, Version=10.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\3rdParty\Bin\AdomdClient\x86\Microsoft.AnalysisServices.AdomdClient.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\SqlEntityFrameworkProvider\2.0 Provider Code\Command.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\2.0 Provider Code\Command.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\2.0 Provider Code\Connection.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\2.0 Provider Code\Connection.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\2.0 Provider Code\Factory.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\2.0 Provider Code\Factory.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\Command.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\Command.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\Connection.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\Connection.cs</Link>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\DdlBuilder.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\DdlBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\Factory.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\Factory.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\ProviderManifest.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\ProviderManifest.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\ProviderServices.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\ProviderServices.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\AliasOrSubquery.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\AliasOrSubquery.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\AliasPairForRecordFlattening.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\AliasPairForRecordFlattening.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\CurrentSelectStatementTracker.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\CurrentSelectStatementTracker.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\DmlSqlGenerator.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\DmlSqlGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\FromClause.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\FromClause.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\ISqlFragment.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\ISqlFragment.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\JoinAlias.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\JoinAlias.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\MetadataHelpers.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\MetadataHelpers.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\NamingScopes.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\NamingScopes.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\SqlBuilder.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\SqlBuilder.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\SqlGenerator.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\SqlGenerator.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\SqlSelectStatement.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\SqlSelectStatement.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\SqlWriter.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\SqlWriter.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SQL Generation\TopClause.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SQL Generation\TopClause.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\SqlProviderFunctions.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\SqlProviderFunctions.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\StoreVersion.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\StoreVersion.cs</Link>
+    </Compile>
+    <Compile Include="..\SqlEntityFrameworkProvider\Utilities\DbExpressionExtension.cs">
+      <Link>Internal\SqlEntityFrameworkProvider\Utilities\DbExpressionExtension.cs</Link>
+    </Compile>
+    <Compile Include="AdomdClient\DoNothingCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AdomdClient\DoNothingConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AdomdClient\DoNothingDataReader.cs" />
+    <Compile Include="AdomdClient\SsasDataReader.cs" />
+    <Compile Include="AdomdClient\SsasParameterCollection.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Internal\DefaultExecutionStrategy.cs" />
+    <Compile Include="Internal\GlobalSuppressions.cs" />
+    <Compile Include="AddSpacesToCamelCasingWordsConvention.cs" />
+    <Compile Include="Internal\MdxGeneration\CalculatedMembersBuilder.cs" />
+    <Compile Include="Internal\MdxGeneration\ColumnOrderTracker.cs" />
+    <Compile Include="Internal\MdxGeneration\ColumnsAxisBuilder.cs" />
+    <Compile Include="Internal\MdxGeneration\DbFunctionExpressionVisitors\FilterFunctionVisitor.cs" />
+    <Compile Include="Internal\MdxGeneration\DbFunctionExpressionVisitors\FilterBinaryExpressionVisitor.cs" />
+    <Compile Include="Internal\MdxGeneration\DbFunctionExpressionVisitors\FunctionVisitor.cs" />
+    <Compile Include="Internal\MdxGeneration\DbFunctionExpressionVisitors\MeasureAggregationFunctionVisitor.cs" />
+    <Compile Include="Internal\MdxGeneration\DbFunctionExpressionVisitors\SumOrCountFunctionVisitor.cs" />
+    <Compile Include="Internal\MdxGeneration\SetExpression.cs" />
+    <Compile Include="Utilities\DbFunctionExpressionExtension.cs" />
+    <Compile Include="IMdxNamingConvention.cs" />
+    <Compile Include="Internal\MdxGeneration\MdxGenerator.cs" />
+    <Compile Include="Internal\MdxGeneration\MdxSelectStatement.cs" />
+    <Compile Include="PreserveSpecifiedNameConvention.cs" />
+    <Compile Include="Internal\MdxGeneration\RowsAxisBuilder.cs" />
+    <Compile Include="Internal\MdxGeneration\SqlStatementToMdxMapper.cs" />
+    <Compile Include="Internal\MetadataHelpers.cs" />
+    <Compile Include="AdomdClient\SsasCommand.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Mdx.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AdomdClient\SsasConnection.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AdomdClient\SsasParameter.cs" />
+    <Compile Include="SsasProvider.cs" />
+    <Compile Include="SsasProviderFactory.cs" />
+    <Compile Include="Internal\SsasProviderManifest.cs" />
+    <Compile Include="Internal\StoreVersion.cs" />
+    <Compile Include="Utilities\AgileDesignLicense.cs" />
+    <Compile Include="Utilities\DbBinaryExpressionExtension.cs" />
+    <Compile Include="Utilities\DbExpressionExtension.cs" />
+    <Compile Include="Utilities\DbScanExpressionExtension.cs" />
+    <Compile Include="Utilities\MachineId.cs" />
+    <Compile Include="Utilities\ObjectExtension.cs" />
+    <Compile Include="Utilities\StringMdxExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdomdExtensions\AdomdExtensions.csproj">
+      <Project>{7DEC1D69-172D-46CE-9FC4-17402EAC6C56}</Project>
+      <Name>AdomdExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SsasEntityFrameworkProvider.Attributes\SsasEntityFrameworkProvider.Attributes.csproj">
+      <Project>{8B44C189-86C3-4DF4-80BB-D23E6657ACB2}</Project>
+      <Name>SsasEntityFrameworkProvider.Attributes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Utilities\Utilities.csproj">
+      <Project>{C1C01693-B9CE-4B85-BCBE-77073C59BBF4}</Project>
+      <Name>Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Agile Design Company\Licensing\AgileDesignLlc.snk">
+      <Link>AgileDesignLlc.snk</Link>
+    </None>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Internal\MdxGeneration\DbFunctionExpressionVisitors\DbFunctionExpressionVisitors.cd" />
+    <None Include="packages.config" />
+    <None Include="Resources\Common.ConceptualSchemaDefinition.csdl" />
+    <None Include="Resources\Common.ProviderManifest.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <EmbeddedResource Include="Resources\SsasProvider.StoreSchemaDefinition.ssdl" />
+    <EmbeddedResource Include="Resources\SsasProvider.StoreSchemaMapping.msl" />
+    <None Include="Resources\System.Data.Resources.CSDLSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\System.Data.Resources.CSMSL.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\System.Data.Resources.EntityStoreSchemaGenerator.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Resources\System.Data.Resources.SSDLSchema.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDictionary Include="..\CustomDictionary.xml">
+      <Link>CustomDictionary.xml</Link>
+    </CodeAnalysisDictionary>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\SsasProvider.ProviderManifest.xml">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\3rdParty\Bin\LogicNP\LogicNP.CryptoLicensing.dll">
+      <Link>Resources\LogicNP.CryptoLicensing.dll</Link>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Internal\SqlEntityFrameworkProvider\Resources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

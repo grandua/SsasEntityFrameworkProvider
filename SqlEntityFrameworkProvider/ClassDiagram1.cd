@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SampleEntityFrameworkProvider.SampleCommand" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="2.75" Width="2" />
+    <Members>
+      <Property Name="CommandText" Hidden="true" />
+      <Property Name="CommandTimeout" Hidden="true" />
+      <Property Name="CommandType" Hidden="true" />
+      <Method Name="CreateDbParameter" Hidden="true" />
+      <Property Name="DbTransaction" Hidden="true" />
+      <Property Name="DesignTimeVisible" Hidden="true" />
+      <Method Name="InitializeMe" Hidden="true" />
+      <Method Name="Prepare" Hidden="true" />
+      <Method Name="SampleCommand" Hidden="true" />
+      <Property Name="UpdatedRowSource" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAICEAQEAARISIAAAgAEACAAAAQAQBAAAAgACQAAA=</HashCode>
+      <FileName>2.0 Provider Code\Command.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_Connection" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SampleEntityFrameworkProvider.SampleConnection" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="7.25" Width="2" />
+    <Members>
+      <Method Name="BeginDbTransaction" Hidden="true" />
+      <Method Name="ChangeDatabase" Hidden="true" />
+      <Method Name="ClearPool" Hidden="true" />
+      <Method Name="Close" Hidden="true" />
+      <Property Name="ConnectionString" Hidden="true" />
+      <Property Name="ConnectionTimeout" Hidden="true" />
+      <Property Name="Database" Hidden="true" />
+      <Property Name="DataSource" Hidden="true" />
+      <Method Name="Dispose" Hidden="true" />
+      <Method Name="EnlistTransaction" Hidden="true" />
+      <Method Name="GetSchema" Hidden="true" />
+      <Method Name="Open" Hidden="true" />
+      <Method Name="SampleConnection" Hidden="true" />
+      <Property Name="ServerVersion" Hidden="true" />
+      <Property Name="Site" Hidden="true" />
+      <Property Name="State" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AEICAIAQAGAAogAIAAAAAQAAACBQAAAAACAABECAAAA=</HashCode>
+      <FileName>2.0 Provider Code\Connection.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SampleEntityFrameworkProvider.SampleFactory" BaseTypeListCollapsed="true">
+    <Position X="6.25" Y="0.5" Width="2.5" />
+    <Members>
+      <Property Name="CanCreateDataSourceEnumerator" Hidden="true" />
+      <Method Name="CreateCommand" Hidden="true" />
+      <Method Name="CreateCommandBuilder" Hidden="true" />
+      <Method Name="CreateConnection" Hidden="true" />
+      <Method Name="CreateConnectionStringBuilder" Hidden="true" />
+      <Method Name="CreateDataAdapter" Hidden="true" />
+      <Method Name="CreateDataSourceEnumerator" Hidden="true" />
+      <Method Name="CreateParameter" Hidden="true" />
+      <Method Name="CreatePermission" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAUAgAIAAgAAAEAAAQEAAAAAAAABAAAQAAAAAAAAAA=</HashCode>
+      <FileName>2.0 Provider Code\Factory.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SampleEntityFrameworkProvider.MetadataHelper" Collapsed="true">
+    <Position X="9.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAQAAAAAAAAAABAAAAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <FileName>DdlBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleEntityFrameworkProvider.SampleProviderManifest">
+    <Position X="3.25" Y="0.5" Width="2.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="SampleEntityFrameworkProvider.SampleProviderManifest.TypeHelpers">
+        <TypeIdentifier>
+          <NewMemberFileName>ProviderManifest.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>MQEACAAAoAAAKAAAACAAAABADYABAAAqgAAIAAAAgDA=</HashCode>
+      <FileName>ProviderManifest.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleEntityFrameworkProvider.SampleProviderServices">
+    <Position X="0.5" Y="0.5" Width="2.25" />
+    <Members>
+      <Method Name="CreateSqlParameter" Hidden="true" />
+      <Method Name="DbCreateDatabase" Hidden="true" />
+      <Method Name="DbCreateDatabaseScript" Hidden="true" />
+      <Method Name="DbDatabaseExists" Hidden="true" />
+      <Method Name="DbDeleteDatabase" Hidden="true" />
+      <Method Name="GetDatabaseFileNames" Hidden="true" />
+      <Method Name="GetParameterSize" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAICABAAAEAgAgAAIAEAIAAgAgAABEEQAAAABgAAAA=</HashCode>
+      <FileName>ProviderServices.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleEntityFrameworkProvider.MetadataHelpers">
+    <Position X="9.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gQAECAAEHAEGAAIWAAAkBIAEgMAAAAIAgQEDAAAEIAA=</HashCode>
+      <FileName>SQL Generation\MetadataHelpers.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleEntityFrameworkProvider.SqlBuilder" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAQAAAAAAAARAABAAIAAAAAAA=</HashCode>
+      <FileName>SQL Generation\SqlBuilder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SampleEntityFrameworkProvider.SqlGenerator" Collapsed="true">
+    <Position X="13.75" Y="0.75" Width="1.5" />
+    <NestedTypes>
+      <Delegate Name="SampleEntityFrameworkProvider.SqlGenerator.FunctionHandler" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>SQL Generation\SqlGenerator.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>JJAhAgq1UcMpog4QBBaJCCACTdRQCKLxBKcrxHCYMSU=</HashCode>
+      <FileName>SQL Generation\SqlGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleEntityFrameworkProvider.SqlSelectStatement" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AoAiAAKAAAAAgAAAAACAAQwAgAEMAABACAAIQAiAIgA=</HashCode>
+      <FileName>SQL Generation\SqlSelectStatement.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="SampleEntityFrameworkProvider.SqlWriter">
+    <Position X="11.5" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAEAAAIBAAAAAACAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>SQL Generation\SqlWriter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SampleEntityFrameworkProvider.SymbolPair" BaseTypeListCollapsed="true">
+    <Position X="14" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAABAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>SQL Generation\SymbolPair.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="SampleEntityFrameworkProvider.ISqlFragment" Collapsed="true">
+    <Position X="13.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>SQL Generation\ISqlFragment.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

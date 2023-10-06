@@ -1,0 +1,172 @@
+﻿using System;
+using System.Data.Common.CommandTrees;
+using System.Linq;
+using AgileDesign.SsasEntityFrameworkProvider.Internal.MdxGeneration;
+using SqlEntityFrameworkProvider;
+
+namespace AgileDesign.SsasEntityFrameworkProvider.Utilities
+{
+    static class DbBinaryExpressionExtension
+    {
+        public static object GetValue(this DbBinaryExpression comparisonExpression)
+        {
+            if (comparisonExpression.Right is DbParameterReferenceExpression)
+            {
+                return comparisonExpression.Right.GetParameterNamedPlaceholder();
+            }
+            if (comparisonExpression.Left is DbParameterReferenceExpression)
+            {
+                return comparisonExpression.Left.GetParameterNamedPlaceholder();
+            }
+            return comparisonExpression.GetConstantExpression().Value;
+        }
+
+        public static bool IsWhereAxisMember(this DbBinaryExpression comparisonExpression)
+        {
+            return ( comparisonExpression.Left is DbFunctionExpression )
+                   && comparisonExpression.FunctionFullName() == Mdx.EdmFunctionFullName_Member();
+            //TODO: Allow DbOrExpression when its members can be combined into a set
+        }
+
+        public static string FunctionFullName(this DbBinaryExpression comparisonExpression)
+        {
+            return ( (DbFunctionExpression)comparisonExpression.Left )
+                .Function.FullName;
+        }
+
+        /// <summary>
+        /// Valid when both (left and right) 
+        /// are (Member() OR Member) 
+        /// or (NotEdmFunction OR NotEdmFunction)
+        /// </summary>
+        public static bool IsValid(this DbOrExpression e)
+        {
+            return (e.Left.IsWhereAxisMember() 
+                        && e.Right.IsWhereAxisMember())
+                   || ((e.Left.IsWhereAxisMember() == false 
+                        && e.Right.IsWhereAxisMember() == false));
+        }
+
+        /// <summary>
+        /// Valid when either (left or right) 
+        /// is not Member()
+        /// </summary>
+        public static bool IsValid(this DbAndExpression e)
+        {
+            return (e.Left.IsWhereAxisMember() == false
+                        || e.Right.IsWhereAxisMember() == false);
+        }
+
+        public static bool IsWhereAxisMember(this DbExpression dbExpression)
+        {
+            return (dbExpression is DbBinaryExpression)
+                   && ((DbBinaryExpression)dbExpression).IsWhereAxisMember();
+        }
+
+        public static SqlBuilder GetMdxSortKey
+            (
+                this DbBinaryExpression comparisonExpression
+                , MdxGenerator mdxGenerator
+            )
+        {
+            return comparisonExpression.GetPropertyExpression().GetMdxSortKey(mdxGenerator);
+        }
+
+
+        static DbExpression GetPropertyExpression(this DbBinaryExpression comparisonExpression)
+        {
+            if (comparisonExpression.Right is DbPropertyExpression)
+            {
+                return comparisonExpression.Right;
+            }
+            if (comparisonExpression.Left is DbPropertyExpression)
+            {
+                return comparisonExpression.Left;
+            }
+            if (comparisonExpression.Right is DbCastExpression)
+            {
+                return ((DbCastExpression)comparisonExpression.Right).Argument;
+            }
+            if (comparisonExpression.Left is DbCastExpression)
+            {
+                return ((DbCastExpression)comparisonExpression.Left).Argument;
+            }
+            DbExpression arg0 = GetArg0(comparisonExpression);
+            if (arg0 != null 
+                && arg0 is DbPropertyExpression)
+            {
+                return arg0;
+            }
+            throw CreateNotSupportedComparisonExpressionException();
+        }
+
+        public static bool HasDbFunctionExpression(this DbBinaryExpression comparisonExpression)
+        {
+            return (comparisonExpression.Left is DbFunctionExpression)
+                   || comparisonExpression.Right is DbFunctionExpression;
+        }
+
+        public static bool HasDbPropertyExpression(this DbBinaryExpression e)
+        {
+            return e.Left.HasDbPropertyExpression()
+                   || e.Right.HasDbPropertyExpression();
+        }
+
+        public static bool HasDbPropertyExpression(this DbExpression e)
+        {
+            return ( e is DbPropertyExpression )
+                   || ( e is DbCastExpression );
+            //Do not do this: || (GetArg0(e) != null);
+        }
+
+
+        static DbExpression GetArg0(DbBinaryExpression comparisonExpression)
+        {
+            DbExpression arg0 = null;
+            if(comparisonExpression.Right is DbFunctionExpression)
+            {
+                arg0 = GetArg0(comparisonExpression.Right);
+            }
+            if(comparisonExpression.Left is DbFunctionExpression)
+            {
+                arg0 = GetArg0(comparisonExpression.Left);
+            }
+            return arg0;
+        }
+
+        static DbExpression GetArg0(DbExpression dbFunctionExpression)
+        {
+            return ( (DbFunctionExpression)dbFunctionExpression )
+                .Arguments.OfType<DbPropertyExpression>()
+                .FirstOrDefault();
+        }
+
+        static DbConstantExpression GetConstantExpression(
+            this DbBinaryExpression comparisonExpression)
+        {
+            if (comparisonExpression.Right is DbConstantExpression)
+            {
+                return (DbConstantExpression)comparisonExpression.Right;
+            }
+            if (comparisonExpression.Left is DbConstantExpression)
+            {
+                return (DbConstantExpression)comparisonExpression.Left;
+            }
+            throw CreateNotSupportedComparisonExpressionException();
+        }
+
+        static bool IsCurrentDateTimeFunction(this DbExpression expression)
+        {
+            return ( expression is DbUnaryExpression )
+                   && ( ( (DbUnaryExpression)expression ).Argument is DbFunctionExpression );
+            //&& (((DbUnaryExpression)expression).Argument as DbFunctionExpression).Arguments[0];
+        }
+
+        static NotSupportedException CreateNotSupportedComparisonExpressionException()
+        {
+            return new NotSupportedException(
+                "Only comparison expressions having DbPropertyExpression and DbConstant expression pair are supported at the moment");
+        }
+
+    }
+}
